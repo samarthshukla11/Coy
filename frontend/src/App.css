@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8f8;
+    color: #252525;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.navbar {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(153, 99, 132);
+    border-bottom: 1px solid #eee;
+}
+
+.navbar h1 {
+    font-size: 30px;
+    color: black;
+}
+
+.navbar h1 span {
+    color: #ed09c7;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar nav .active {
+    color: #1d1c1c;
+    border-bottom: 2px solid #121111;
+}
+
+.discover {
+    padding: 35px 15px;
+    text-align: center;
+}
+
+.discover > h2 {
+    font-size: 30px;
+    color: #252525;
+}
+
+.subtitle {
+    color: #777;
+    margin: 10px 0 25px;
+}
+
+.profile-card {
+    width: 350px;
+    max-width: 100%;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.profile-card > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.profile-info {
+    padding: 20px;
+}
+
+.profile-info h2 {
+    margin-bottom: 10px;
+    color: #252525;
+}
+
+.profile-info p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.interests span {
+    background: #fff0f3;
+    color: #ff4267;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px 0 25px;
+}
+
+.actions button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.actions button:hover {
+    transform: scale(1.12);
+}
+
+.pass {
+    background: #f1f1f1;
+    color: #777;
+}
+
+.like {
+    background: #ff4267;
+    color: white;
+}
+
+.empty-state {
+    margin-top: 100px;
+    
+}
+
+.empty-state h2 {
+    color: #252525;
+}
+
+.empty-state p {
+    margin-top: 10px;
+    color: #121010;
+}
+
+.center {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.match-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.match-box {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+}
+
+.match-box h1 {
+    color: #ff4267;
+    margin-bottom: 15px;
+}
+
+.match-box button {
+    margin-top: 25px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4267;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .profile-card > img {
+        height: 320px;
+    }
+}
+.card-container {
+    width: 350px;
+    max-width: 100%;
+    margin: auto;
+    touch-action: pan-y;
+}
+
+.profile-card {
+    cursor: grab;
+    user-select: none;
+}
+
+.profile-card:active {
+    cursor: grabbing;
+}
+
+.profile-card img {
+    pointer-events: none;
+}
+
+.actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.error-message {
+    color: #e63950;
+    margin: 10px 0;
+}
+
+.home-tab {
+    min-height: 70vh;
+}
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.match-card {
+    width: 260px;
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.match-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.match-card h3 {
+    margin: 12px 0 8px;
+}
+
+.match-card p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.match-card span {
+    color: #ff4267;
+    font-size: 14px;
+}
+.profile-card {
+    position: relative;
+}
+
+.swipe-indicator {
+    position: absolute;
+    top: 25px;
+    z-index: 10;
+    padding: 10px 20px;
+    border: 3px solid;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.like-indicator {
+    right: 20px;
+    color: #ff3864;
+    border-color: #ff3864;
+    transform: rotate(15deg);
+}
+
+.pass-indicator {
+    left: 20px;
+    color: #777;
+    border-color: #777;
+    transform: rotate(-15deg);
+}
